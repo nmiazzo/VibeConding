@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="game-title">TIC TAC TOE AI</h1>
+            <div class="score-board">
+                <div class="score-item">
+                    <span class="score-label">You</span>
+                    <span class="score-value" id="playerScore">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">AI</span>
+                    <span class="score-value" id="aiScore">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">Ties</span>
+                    <span class="score-value" id="tieScore">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-setup" id="gameSetup">
+            <h2>Choose Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="difficulty-btn easy" onclick="startGame('easy')">
+                    <span class="difficulty-title">EASY</span>
+                    <span class="difficulty-desc">Random moves</span>
+                </button>
+                <button class="difficulty-btn medium" onclick="startGame('medium')">
+                    <span class="difficulty-title">MEDIUM</span>
+                    <span class="difficulty-desc">Smart defense</span>
+                </button>
+                <button class="difficulty-btn hard" onclick="startGame('hard')">
+                    <span class="difficulty-title">HARD</span>
+                    <span class="difficulty-desc">Unbeatable</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="game-area" id="gameArea" style="display: none;">
+            <div class="game-info">
+                <div class="current-player" id="currentPlayer">Your turn</div>
+                <div class="game-status" id="gameStatus"></div>
+                <button class="new-game-btn" onclick="showDifficultySelection()">New Game</button>
+            </div>
+
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+        </div>
+
+        <!-- Win/Lose/Tie Animation Overlay -->
+        <div class="game-result-overlay" id="gameResultOverlay">
+            <div class="result-content">
+                <div class="result-icon" id="resultIcon"></div>
+                <div class="result-text" id="resultText"></div>
+                <button class="play-again-btn" onclick="playAgain()">Play Again</button>
+            </div>
+        </div>
+
+        <!-- Particle effects container -->
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
